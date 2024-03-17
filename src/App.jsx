@@ -2,17 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Blog } from './Component/Blog'
+import Signupp from './Component/Authentication/Signup'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className=' bg-red-600'>
+    <Signupp/>
     
-      <Blog/>
-       </div>
     </>
   )
 }
