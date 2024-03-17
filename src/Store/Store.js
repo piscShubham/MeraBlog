@@ -1,6 +1,5 @@
 
 import { configureStore } from '@reduxjs/toolkit';
-
 import Authenticate from '../Features/Authenticate';
 
 
