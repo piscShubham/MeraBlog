@@ -5,6 +5,7 @@ import group from "../Assests/group.svg";
 
 import { useDispatch, useSelector } from "react-redux";
  import { SingupUser } from "../../Features/Authenticate";
+import { useNavigate } from "react-router-dom";
 
 function Signupp() {
   const [firstname, setFirstName] = useState();
@@ -14,16 +15,12 @@ function Signupp() {
   const[confirmPassword,setConfirmPassword]=useState();
   const [passwordmath, setPasswordsMatch] = useState(true);
   const dispatch = useDispatch();
-   
+   const Navigate=useNavigate();
   
-
-
-  
-
   // on Submit function
   async function handleSubmit() {
     dispatch(SingupUser({firstname, lastname, email, password }));
-    console.log(firstname,lastname,email,confirmPassword);
+     Navigate('/');
   }
 
   return (
@@ -57,7 +54,7 @@ function Signupp() {
             <h1 className=" font-inter text: #666666 text-black text-xl text-left ml-10 mb-6">
               Sign Up
             </h1>
-            <div className="rounded-md flex py-1 lg:ml-5">
+            <div className="rounded-md flex py-1 lg:ml-7">
               <div className="ml-2  ">
                 <p
                   className="text-gray-500 flex lg:ml-1"
@@ -92,19 +89,19 @@ function Signupp() {
               </div>
             </div>
             <div className="px-3 py-2 flex-row-reverse">
-              <label className="flex lg:ml-6"style={{ color: "#848080" }}>
+              <label className="flex lg:ml-7"style={{ color: "#848080" }}>
                 Email Address
               </label>
               <input
                 type="email"
-                className="h-58 px-24 xl:px-36 lg:mr-20 lg:28 py-2 rounded-md border text-black border-gray-300"
+                className="h-58 px-24 lg:px-36 lg:mr-24   py-2 rounded-md border text-black border-gray-300"
                 placeholder=" Enter your email address "
                 name="emailAddress"
                 value={email}
                 onChange={(e) => setEmailAddress(e.target.value)}
               />
             </div>
-            <div className=" rounded-2xl flex py-2 lg:ml-5">
+            <div className=" rounded-2xl flex py-2 lg:ml-7">
               <div className="ml-2">
                 <p className="text-gray-500 flex lg:ml-1">Password</p>
                 <input
