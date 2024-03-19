@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import group from "../Assests/group.svg";
 
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginuser } from "../../Features/Authenticate";
 
 function Login() {
   const [email, setEmailAddress] = useState();
   const [password, setPassword] = useState();
   const dispatch = useDispatch();
-
+  const Navigate = useNavigate();
   async function handleSubmit() {
     dispatch(loginuser({ email, password }));
-    console.log(email, password);
+    Navigate("/");
   }
 
   return (
@@ -46,7 +46,7 @@ function Login() {
               Sign In
             </h1>
             <div className="px-3 py-2 flex-row-reverse">
-              <label className="flex lg:ml-2" style={{color:"#848080"}}>
+              <label className="flex lg:ml-2" style={{ color: "#848080" }}>
                 Enter Email
               </label>
               <input
@@ -55,7 +55,7 @@ function Login() {
                 placeholder=" Enter your email address "
                 name="emailAddress"
                 value={email}
-                onChange={(e) =>setEmailAddress(e.target.value)}
+                onChange={(e) => setEmailAddress(e.target.value)}
               />
             </div>
             <div className="px-3 flex-row-reverse">
