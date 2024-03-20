@@ -44,7 +44,7 @@ export  function CreateBlog() {
        Create the Blog that You've Always Wanted
         </p>
       </div>
-      <form  onSubmit={handleCreate} className="mx-auto  max-w-xl sm:mt-5">
+
         <div className="grid grid-cols-1 gap-x-8  sm:grid-cols-2">
           <div className="sm:col-span-2">
             <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
