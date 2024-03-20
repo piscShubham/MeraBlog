@@ -4,7 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useDispatch } from "react-redux";
 import { Content } from "../BlogContent/Content";
 import { BlogFilter } from "../BlogContent/BlogFilter";
-import { Pagination } from "../BlogContent/Pagination";
+
 
 const user = {
   name: "Shubham pandey",
@@ -14,7 +14,7 @@ const user = {
 };
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "Create Blog", href: "/news", current: true },
+  { name: "Create Blog", href: "/createblog", current: true },
 ];
 let emails = localStorage.getItem("email");
 const userNavigation = [
@@ -33,14 +33,6 @@ export default function Home() {
 
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-white-800">
           {({ open }) => (
@@ -201,24 +193,13 @@ export default function Home() {
               </Disclosure.Panel>
             </>
           )}
-        </Disclosure>
-
-       
-     
-     
-       
-      
-
-       
-         
+        </Disclosure> 
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            {/* Your content */}
+       
             
      <Content />
-    
-     
-     
+  
           </div>
         </main>
       </div>
