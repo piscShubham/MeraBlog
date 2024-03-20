@@ -33,10 +33,7 @@ export default function Home() {
 
   return (
     <>
-<<<<<<< HEAD
-=======
-    
->>>>>>> 5a104d3ab059320e94bc3a492a614014b9e8df0d
+
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-white-800">
           {({ open }) => (
