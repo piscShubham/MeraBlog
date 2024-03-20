@@ -25,7 +25,7 @@ export  function CreateBlog() {
 
 
   return (
-    <div className="isolate bg-white px-6  sm:py-32 ">
+    <div className="isolate bg-white px-6   ">
       <div
         className="absolute inset-x-0  -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
         aria-hidden="true"
@@ -44,7 +44,7 @@ export  function CreateBlog() {
        Create the Blog that You've Always Wanted
         </p>
       </div>
-      <form  onSubmit={handleCreate} className="mx-auto  max-w-xl sm:mt-20">
+
         <div className="grid grid-cols-1 gap-x-8  sm:grid-cols-2">
           <div className="sm:col-span-2">
             <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
@@ -109,10 +109,6 @@ export  function CreateBlog() {
               />
             </div>
           </div>
-
-
-       
-          
         </div>
         <div className="mt-10">
           <button

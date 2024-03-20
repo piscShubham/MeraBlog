@@ -1,100 +1,10 @@
 import { Link } from "react-router-dom";
-import { Pagination } from "./Pagination";
+
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import { useState } from "react";
 
 
-// const products = [
-//   {
-//     id: 1,
-//     Content:
-//       "Tal slender porcelain bottle with natural clay textured body and cork stopper. ",
-//     href: "blogfilter",
-//     Extra: "Read More",
-//     imageSrc:
-//       "	https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/5cb11436342dd9c3cf851ebea370dfb33538970bdfaaba07297280466e541e15.jpg/v1/fill/w_538%2Ch_303%2Cq_90%2Cusm_0.60_1.00_0.01/5cb11436342dd9c3cf851ebea370dfb33538970bdfaaba07297280466e541e15.webp",
-//     imageAlt:
-//       "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
-//   },
-//   {
-//     id: 2,
-//     Content:
-//       "Tall slender porcelain bottle with natural clay textured body and cork stopper. ",
-//       href: "blogfilter",
-//     Extra: "Read More",
-//     imageSrc:
-//       "	https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/dd8b3aaf70425d896c779f72463733adcd26fc3191832e054ab0098ea2fe8e1b1584443536776.jpg/v1/fill/w_538%2Ch_303%2Cq_90%2Cusm_0.60_1.00_0.01/dd8b3aaf70425d896c779f72463733adcd26fc3191832e054ab0098ea2fe8e1b1584443536776.webp",
-//     imageAlt:
-//       "Olive drab green insulated bottle with flared screw lid and flat top.",
-//   },
-//   {
-//     id: 3,
-//     Content:
-//       "Tall slender porcelain bottle with natural clay textured body and cork stopper. ",
-//       href: "blogfilter",
-//     Extra: "Read More",
-//     imageSrc:
-//       "https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/9c2624bcbbd9012005eae04dbdb0a12bccae7cdb552215f5e7ff8c54345edefc.jpg/v1/fill/w_538%2Ch_303%2Cq_90%2Cusm_0.60_1.00_0.01/9c2624bcbbd9012005eae04dbdb0a12bccae7cdb552215f5e7ff8c54345edefc.webp",
-//     imageAlt:
-//       "Person using a pen to cross a task off a productivity paper card.",
-//   },
-//   {
-//     id: 4,
-//     Content:
-//       "Tall slender porcelain bottle with natural clay textured body and cork stopper. ",
-//       href: "blogfilter",
-//     Extra: "Read More",
-//     imageSrc:
-//       "https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/54d15586b8e831a8d6b14b6f5e53c9670e4a6aa53d10a2c5e711508997ac8bfe1628614389821.jpg/v1/fill/w_538%2Ch_303%2Cq_90%2Cusm_0.60_1.00_0.01/54d15586b8e831a8d6b14b6f5e53c9670e4a6aa53d10a2c5e711508997ac8bfe1628614389821.webp",
-//     imageAlt:
-//       "Hand holding black machined steel mechanical pencil with brass tip and top.",
-//   },
-//   {
-//     id: 5,
-//     Content:
-//       "Tall slender porcelain bottle with natural clay textured body and cork stopper. ",
-//       href: "blogfilter",
-//     Extra: "Read More",
-//     imageSrc:
-//       "https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/9c2624bcbbd9012005eae04dbdb0a12bccae7cdb552215f5e7ff8c54345edefc.jpg/v1/fill/w_538%2Ch_303%2Cq_90%2Cusm_0.60_1.00_0.01/9c2624bcbbd9012005eae04dbdb0a12bccae7cdb552215f5e7ff8c54345edefc.webp",
-//     imageAlt:
-//       "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
-//   },
-//   {
-//     id: 6,
-//     Content:
-//       "Tall slender porcelain bottle with natural clay textured body and cork stopper. ",
-//       href: "blogfilter",
-//     Extra: "Read More",
-//     imageSrc:
-//       "https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/ada75440311254d771b9bfa28173170e8e377ec13ffdc2050b4e82bfae2f697c1628763949063.jpg/v1/fill/w_538%2Ch_303%2Cq_90%2Cusm_0.60_1.00_0.01/ada75440311254d771b9bfa28173170e8e377ec13ffdc2050b4e82bfae2f697c1628763949063.webp",
-//     imageAlt:
-//       "Olive drab green insulated bottle with flared screw lid and flat top.",
-//   },
-//   {
-//     id: 7,
-//     Content:
-//       "Tall slender porcelain bottle with natural clay textured body and cork stopper. ",
-//       href: "blogfilter",
-//     Extra: "Read More",
-//     imageSrc:
-//       "	https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/0c018f7c8c9f5adcc54531905fb2bbe2c26295f1624ea36b93708f2833e828c11628607364932.jpg/v1/fill/w_538%2Ch_303%2Cq_90%2Cusm_0.60_1.00_0.01/0c018f7c8c9f5adcc54531905fb2bbe2c26295f1624ea36b93708f2833e828c11628607364932.webp",
-//     imageAlt:
-//       "Person using a pen to cross a task off a productivity paper card.",
-//   },
-//   {
-//     id: 8,
-//     Content:
-//       "Tall slender porcelain bottle with natural clay textured body and cork stopper. ",
-//       href: "blogfilter",
-//     Extra: "Read More",
-//     imageSrc:
-//       "https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/719ae50b59c255985766f97b186a5945ac8969f0b77c7dc43f1c676b1d3f60891628692326613.jpg/v1/fill/w_538%2Ch_303%2Cq_90%2Cusm_0.60_1.00_0.01/719ae50b59c255985766f97b186a5945ac8969f0b77c7dc43f1c676b1d3f60891628692326613.webp",
-//     imageAlt:
-//       "Hand holding black machined steel mechanical pencil with brass tip and top.",
-//   },
 
-// ];
 
 // Content.js
 
