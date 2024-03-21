@@ -2,10 +2,6 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useDispatch } from "react-redux";
-import { Content } from "../BlogContent/Content";
-import { BlogFilter } from "../BlogContent/BlogFilter";
-
-
 const user = {
   name: "Shubham pandey",
   email: "sp2002p@gmail.com",
@@ -20,10 +16,8 @@ let emails = localStorage.getItem("email");
 const userNavigation = [
   { name: "Your Profile", href: "/profile/" + emails },
   { name: "Settings", href: "#" },
-
   { name: "Sign out", href: "/login" },
 ];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -32,8 +26,7 @@ export default function Home() {
   const dispatch = useDispatch();
 
   return (
-    <>
-
+    <> 
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-white-800">
           {({ open }) => (
@@ -130,9 +123,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div class="border border-dotted  border-yellow-800"></div>
-
               </div>
-
               <Disclosure.Panel className="md:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                   {navigation.map((item) => (
@@ -194,9 +185,7 @@ export default function Home() {
               </Disclosure.Panel>
             </>
           )}
-
-          </div>
-        </main>
+        </Disclosure>   
       </div>
     </>
   );
